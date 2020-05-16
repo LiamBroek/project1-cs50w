@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+{% block title %}
+Register
+{% endblock %}
+
+{% block body %}
+
+<div class = 'register'>
+		<div class = 'big-banner'>
+			<div class = 'container'>
+				<div class='container'>
+					<h1>Register</h1>
+
+					<form action="{{ url_for('login') }}" method ="post" class = 'register_form'>
+						{% if registerValid == False %}
+						<div class='form-row'>
+							<div class='col'>
+								<h6 id='invalid'>*Some fields are invalid. Please ensure all required fields are entered and that your username is unique</h6>
+							</div>
+						</div>
+						{% endif %}
+
+
+						<div class='form-row'>
+							
+							<div class='col'>
+								<label for="fname">*First Name</label>
+								<input type="text" class="form-control" name='fname' placeholder="First Name">
+							</div>
+
+							<div class='col'>
+								<label for="sname">*Last Name</label>
+								<input type="text" class="form-control" name='sname' placeholder="Last Name">
+							</div>
+						</div>
+
+						<div class="form-row">
+
+                        	<div class="col">
+                                <label for="username">*Username</label>
+                                <input type="text" class="form-control" name = 'username' placeholder="Username">
+                        	</div>           
+
+                		</div>
+
+                		<div class="form-row">
+
+                        	<div class="col">
+                                <label for="email">Email</label>
+                                <input type="text" class="form-control" name = 'email' placeholder="email">
+                        	</div>           
+
+                		</div>
+						
+						<div class="form-row">
+							<div class="col">
+                                <label for="password">*Password (minimum 6 characters)</label>
+                                <input type="password" class="form-control" name='password'placeholder="Password">
+                        	</div>
+						</div>
+                		
+                		<div class="form-row">
+							<div class="col">
+                                <label for="repassword">*Re-enter Password</label>
+                                <input type="password" class="form-control" name='repassword'placeholder="Re-enter Password">
+                        	</div>
+						</div>	
+
+						<div class='form-row'>
+							<div class='col'>
+								<h6>(All fields marked * must be filled in)</h6>
+							</div>
+						</div>
+						
+			
+						<div class="form-row">
+							<div class='col-9'>
+								<button class="btn btn-success">Register</button>
+							</div>
+
+							<div class='col-3'>
+									<a href="{{ url_for('login')}}">Login</a>
+							</div>					
+							
+						</div>				
+						
+					</form>
+
+				</div>
+				
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+{% endblock%}

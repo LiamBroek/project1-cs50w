@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+{% block title %}
+Login
+{% endblock %}
+
+{% block body %}
+	<div class = 'login'>
+		<div class = 'big-banner'>
+			<div class = 'container'>
+				<div class='container'>
+					<h1>Login</h1>
+
+					<form action="{{ url_for('search') }}" method ="post" class = 'login_form'>
+
+						{% if bValid == False %}
+						<div class='form-row'>
+							<div class='col'>
+								<h6 id='invalid'>*Username or password is incorrect</h6>
+							</div>
+						</div>
+						{% endif %}
+
+						<div class="form-row">
+
+                        	<div class="col">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control" name = 'username' placeholder="Username">
+                        	</div>
+
+                        	<div class="col">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" name='password'placeholder="Password">
+                        	</div>
+
+                		</div>
+						
+						<div class="form-row">
+							<div class='col-7'>
+								<button class="btn btn-success">Login</button>
+							</div>
+
+							<div class='col-4'>
+									<a href="{{ url_for('register')}}">Not Registered?</a>
+							</div>
+
+							
+							
+						</div>
+						
+						
+					</form>
+				</div>
+				
+
+			</div>
+
+		</div>
+
+	</div>
+
+		
+
+	
+	
+
+
+
+{% endblock %}

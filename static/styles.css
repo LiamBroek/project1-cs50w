@@ -1,0 +1,172 @@
+.login .big-banner, .register .big-banner, .search .big-banner, .results .big-banner, .book .big-banner, .index .big-banner {
+  margin-top: 0;
+  width: 100%;
+  background-image: url("/static/images/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative; }
+
+.login .big-banner .container, .register .big-banner .container, .search .big-banner .container, .results .big-banner .container, .book .big-banner .container, .index .big-banner .container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 300px; }
+
+.login .big-banner .container, .register .big-banner .container, .search .big-banner .container, .results .big-banner .container, .book .big-banner .container {
+  width: 60%; }
+  .login .big-banner .container .container, .register .big-banner .container .container, .search .big-banner .container .container, .results .big-banner .container .container, .book .big-banner .container .container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: rgba(255, 255, 204, 0.9); }
+    @media (min-width: 975px) {
+      .login .big-banner .container .container, .register .big-banner .container .container, .search .big-banner .container .container, .results .big-banner .container .container, .book .big-banner .container .container {
+        width: 700px; } }
+    @media (max-width: 974px) {
+      .login .big-banner .container .container, .register .big-banner .container .container, .search .big-banner .container .container, .results .big-banner .container .container, .book .big-banner .container .container {
+        width: 100%; } }
+    .login .big-banner .container .container h1, .register .big-banner .container .container h1, .search .big-banner .container .container h1, .results .big-banner .container .container h1, .book .big-banner .container .container h1 {
+      position: center;
+      color: black;
+      font-size: 50px;
+      padding-bottom: 20px; }
+    .login .big-banner .container .container label, .register .big-banner .container .container label, .search .big-banner .container .container label, .results .big-banner .container .container label, .book .big-banner .container .container label {
+      color: black; }
+    .login .big-banner .container .container .form-row, .register .big-banner .container .container .form-row, .search .big-banner .container .container .form-row, .results .big-banner .container .container .form-row, .book .big-banner .container .container .form-row {
+      padding-bottom: 20px; }
+    .login .big-banner .container .container .col-3, .register .big-banner .container .container .col-3, .search .big-banner .container .container .col-3, .results .big-banner .container .container .col-3, .book .big-banner .container .container .col-3 {
+      padding-top: 10px; }
+
+h1 {
+  font-family: "Courier New"; }
+
+a {
+  font-family: 'verdana';
+  text-decoration: none; }
+
+#invalid {
+  color: red;
+  font-size: 15px; }
+
+label {
+  font-family: 'verdana'; }
+
+#back {
+  color: black;
+  background: rgba(255, 255, 204, 0.9);
+  padding: 4px;
+  text-decoration: underline; }
+
+.index .big-banner .container {
+  padding-bottom: 450px;
+  text-align: center; }
+  .index .big-banner .container .container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: rgba(255, 255, 204, 0.9); }
+    @media (min-width: 975px) {
+      .index .big-banner .container .container {
+        width: 690px; } }
+    @media (max-width: 974px) {
+      .index .big-banner .container .container {
+        width: 100%; } }
+    .index .big-banner .container .container h1 {
+      position: center;
+      color: black;
+      font-size: 70px; }
+    .index .big-banner .container .container a {
+      text-decoration: none;
+      color: black;
+      padding: 20px;
+      font-size: 25px; }
+    .index .big-banner .container .container a:hover {
+      color: white; }
+
+.login .big-banner .container {
+  padding-bottom: 425px; }
+  @media (max-width: 520px) {
+    .login .big-banner .container {
+      width: 90%; } }
+
+.register .big-banner .container {
+  padding-top: 200px;
+  padding-bottom: 165px; }
+  @media (max-width: 520px) {
+    .register .big-banner .container {
+      width: 90%; } }
+
+.search .big-banner .container {
+  padding-bottom: 465px; }
+  @media (max-width: 520px) {
+    .search .big-banner .container {
+      width: 90%; } }
+  .search .big-banner .container .container .col-3 {
+    padding-top: 0; }
+
+header {
+  position: fixed;
+  z-index: 9999;
+  width: 100%; }
+  header .col-2 {
+    text-align: right; }
+  header .col-10 {
+    color: white;
+    font-size: 20px; }
+
+.results .big-banner .container {
+  width: 90%;
+  padding-top: 100px;
+  padding-bottom: 550px; }
+  .results .big-banner .container #search_section .col-3 {
+    padding-top: 0; }
+  .results .big-banner .container #result_section {
+    margin-top: 20px;
+    color: black; }
+    .results .big-banner .container #result_section h2 {
+      padding-bottom: 30px; }
+    .results .big-banner .container #result_section ul {
+      list-style-type: none;
+      padding-left: 0; }
+      .results .big-banner .container #result_section ul li {
+        padding: 5px 0 5px 0; }
+      .results .big-banner .container #result_section ul p {
+        font-style: italic; }
+      .results .big-banner .container #result_section ul a {
+        text-decoration: none;
+        color: black; }
+      .results .big-banner .container #result_section ul a:hover {
+        color: white; }
+
+.book .big-banner .container {
+  padding-top: 100px;
+  padding-bottom: 70px;
+  width: 90%; }
+.book .back {
+  margin-bottom: 6px; }
+.book #leaveReview {
+  margin-top: 50px; }
+.book .rating input {
+  display: none; }
+.book .rating label span {
+  position: relative; }
+.book .rating label input:checked ~ span {
+  color: orange; }
+.book .icon1:hover, .book .icon2:hover, .book .icon3:hover, .book .icon4:hover, .book .icon5:hover {
+  color: orange; }
+.book h6 {
+  font-size: 20px; }
+.book .col-6 {
+  padding-top: 10px; }
+.book #reviews {
+  margin-top: 20px; }
+.book #post {
+  margin-bottom: 0; }
+.book #userReview {
+  padding-left: 20px;
+  padding-top: 10px;
+  font-weight: bold; }
+.book #reviewData {
+  padding-top: 11px; }
+.book #eachReview {
+  padding-bottom: 10px; }
+
+/*# sourceMappingURL=styles.css.map */

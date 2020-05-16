@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block title %}
+	Welcome
+{% endblock %}
+
+{% block body %}
+<div class = 'index'>
+	<div class = 'big-banner'>
+		<div class = 'container'>
+			<div class= 'container'>
+				<h1>Tell Me About This Book</h1>
+				<a href="{{ url_for('login') }}">Login</a>
+				<a href="{{ url_for('register') }}">Register</a>
+			</div>
+			
+		</div>
+		
+	</div>
+</div>
+
+	
+{% endblock %}

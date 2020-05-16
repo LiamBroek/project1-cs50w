@@ -1,0 +1,7 @@
+Flask
+Flask-Session
+psycopg2-binary
+SQLAlchemy
+werkzeug
+Requests
+URL:postgres://kzqpemwthwwdev:f0fd32c319e1b4207d19ee0c34c32da810278e9e595fd6b6d83752610afd7c7f@ec2-46-137-84-173.eu-west-1.compute.amazonaws.com:5432/d3pam557abt329

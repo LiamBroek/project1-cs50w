@@ -1,0 +1,331 @@
+
+// VARIABLES
+
+$bg_shade: rgba(255,255,204,0.9);
+$text_color: black;
+
+// CLASS SETTING
+
+%basic_background{
+	margin-top: 0;
+	width: 100%;
+	background-image: url('/static/images/background.jpg');
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	position: relative;
+}
+
+%basic_container{
+			margin-left: auto;
+			margin-right: auto;
+			padding-top: 300px;
+
+}
+
+
+%form_page{
+	.big-banner{
+		@extend %basic_background;
+		.container{
+			@extend %basic_container;
+			width: 60%;
+			
+			.container{
+				@media(min-width: 975px){
+					width:700px;
+
+				}
+				@media(max-width: 974px){
+					width: 100%;
+				}
+
+
+				
+				padding-top: 20px;
+				padding-bottom: 20px;
+				background: $bg_shade;
+				
+				h1{
+					position: center;
+					color: $text_color;
+					font-size: 50px;
+					padding-bottom: 20px;
+				}
+
+				label{
+					color: $text_color;
+
+				}
+
+				.form-row{
+					padding-bottom: 20px;
+				}
+
+				.col-3{
+					padding-top: 10px;
+				}
+
+			}
+
+		}
+	}
+
+}
+
+
+// GENERAL
+
+h1{
+	font-family: "Courier New";
+
+}
+a{
+	font-family: 'verdana';
+	text-decoration: none;
+}
+#invalid{
+	color: red;
+	font-size: 15px;
+}
+
+label{
+	font-family: 'verdana';
+}
+#back{
+		color: black;
+		background: $bg_shade;
+		padding: 4px;
+		text-decoration: underline;
+
+}
+
+
+// INDEX
+
+.index{
+	.big-banner{
+		@extend %basic_background;
+		.container{
+			@extend %basic_container;
+			padding-bottom: 450px;
+			text-align: center;			
+			.container{
+				@media(min-width: 975px){
+					width:690px;
+
+				}
+				@media(max-width: 974px){
+					width: 100%;
+				}
+				padding-top: 20px;
+				padding-bottom: 20px;
+				background: $bg_shade;
+				h1 {
+				position: center;
+				color: $text_color;
+				font-size: 70px;
+				}
+				a{
+					text-decoration: none;
+					color: black;
+					padding: 20px;
+					font-size: 25px;
+				}
+				a:hover{
+					color: white;
+				}
+
+			}
+		
+		}
+	}
+}
+
+// LOGIN
+
+.login{
+	@extend %form_page;
+	.big-banner{
+		.container{
+			padding-bottom: 425px;
+			@media(max-width: 520px){
+					width: 90%;
+			}
+			
+		}
+	}
+	
+}
+
+// REGISTER
+
+.register{
+	@extend %form_page;
+	.big-banner{
+		.container{
+			padding-top: 200px;
+			padding-bottom: 165px;
+			@media(max-width: 520px){
+					width: 90%;
+			}
+			
+		}
+	}
+}
+
+
+// SEARCH
+
+.search{
+	@extend %form_page;
+
+	.big-banner{
+		.container{
+			@media(max-width: 520px){
+					width: 90%;
+			}
+			padding-bottom: 465px;
+			.container{
+				.col-3{
+					padding-top: 0;
+				}
+
+			}
+		}
+	}
+
+}
+
+// HEADER
+
+header{
+	position: fixed;
+	z-index: 9999;
+	width: 100%;
+	.col-2{
+		text-align: right;
+	}
+	.col-10{
+		color: white;
+		font-size: 20px;
+	}
+	// align-content: right;
+
+}
+
+
+//  RESULTS
+.results{
+	@extend %form_page;
+
+	.big-banner{
+		.container{
+			
+			
+
+			width: 90%;
+			padding-top: 100px;
+			padding-bottom: 550px;
+			#search_section{
+				.col-3{
+					padding-top: 0;
+				}
+			}
+			#result_section{
+				margin-top: 20px;
+				color: $text_color;
+				h2{
+					padding-bottom: 30px;
+				}
+				ul{
+					list-style-type: none;
+					padding-left: 0;	
+
+					li{
+						padding: 5px 0 5px 0;
+						
+					}	
+					p{
+						font-style: italic;
+					}
+
+					a{						
+						text-decoration: none;
+						color: $text_color;
+					}
+					a:hover{
+						color: white;
+					}
+
+				}
+
+			}
+		}
+	}
+
+}
+
+
+// BOOK
+.book{
+	@extend %form_page;
+
+	.big-banner{
+		.container{
+			padding-top: 100px;
+			padding-bottom: 70px;
+			width: 90%;
+		}
+	}
+
+	.back{
+		margin-bottom: 6px;
+	}
+
+	#leaveReview{
+		margin-top: 50px;
+	}
+
+	.rating input{
+		display: none;
+	}
+
+	.rating label span{
+		position:relative;
+	}
+	.rating label input:checked ~ span{
+		color:orange;
+	}
+	.icon1:hover, .icon2:hover, .icon3:hover, .icon4:hover, .icon5:hover,{
+		color: orange;
+	}
+	h6{
+		font-size: 20px;
+
+	}
+	.col-6{
+		padding-top: 10px;
+	}
+	#reviews{
+		margin-top: 20px;
+	}
+	#post{
+		margin-bottom: 0;
+	}
+	#userReview{
+		padding-left: 20px;
+		padding-top: 10px;
+		font-weight: bold;
+	}
+	#reviewData{
+		padding-top: 11px;
+	}
+	#eachReview{
+		padding-bottom: 10px;
+	}
+
+}
+
+
+

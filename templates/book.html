@@ -1,0 +1,156 @@
+{% extends "layout.html" %}
+{% block title %}
+Book
+{% endblock %}
+
+
+
+{% block body %}
+	<header>
+			<nav class="navbar navbar-dark bg-dark">
+				<div class='col-10'>
+					{{username[0]}}
+				</div>
+				<div class="col-2">	
+					<a class="navbar-brand" href="{{ url_for('logout') }}">Log Out</a>
+				</div>
+  				
+  			</nav>
+	</header>
+
+
+	<div class = 'book'>
+		<div class = 'big-banner'>
+			<div class = 'container'>
+				<div class='back'>
+					<a id= 'back' href="{{ url_for('search')}}">Back to Search</a>
+				</div>
+				
+				<div class='container'>
+					<h1>{{ book.title }}</h1>
+
+					<div class='row'>
+						<div class='col-3'><h5>Title:</h5></div>
+						<div class='col-6'><h5>{{ book.title }}</h5></div>
+
+					</div>
+					<div class='row'>
+						<div class='col-3'><h5>Author:</h5></div>
+						<div class='col-6'><h5>{{ book.author }}</h5></div>
+
+					</div>
+					<div class='row'>
+						<div class='col-3'><h5>Year:</h5></div>
+						<div class='col-6'><h5>{{ book.year }}</h5></div>
+
+					</div>
+					<div class='row'>
+						<div class='col-3'><h5>ISBN:</h5></div>
+						<div class='col-6'><h5>{{ book.isbn }}</h5></div>
+
+					</div>
+					<div class='row'>
+						<div class='col-3'><h5>Average Rating:</h5></div>
+						<div class='col-6'><h5>{{aveRating}}</h5></div>
+
+					</div>
+					<div class='row'>
+						<div class='col-3'><h5>Total Ratings:</h5></div>
+						<div class='col-6'><h5>{{numRatings}}</h5></div>
+
+					</div>
+				</div>
+
+				<div class='container' id='leaveReview'>
+					<form action="{{ url_for('book', book_id = book.book_id) }}" method ="post" class = 'review_form'>
+						<div class="form-row">
+                        	<div class="form-group col-md-12">
+                                <h3>Leave a Review</h5>
+                                <textarea class="form-control" name='review' id='review' aria-label="With textarea" placeholder= "Type your review here..."></textarea>
+                               
+                        	</div>
+							
+                        	
+                        	<div class='form-row col-12'>
+                        		<div class='col-4'>
+                        			<h5>Rate this book:</h5>
+                        		</div>
+
+                        		<div class='col-5'>
+                        			<div class="rating">
+                        				<label>
+                        					<input type="radio" name="rating" value="1">
+                        					<span class='icon1'>★</span>
+                        				</label>
+                        				<label>
+                        					<input type="radio" name="rating" value="2">
+                        					<span class='icon2'>★</span>
+                        				</label>
+                        				<label>
+                        					<input type="radio" name="rating" value="3">
+                        					<span class='icon3'>★</span>
+                        				</label>
+                        				<label>
+                        					<input type="radio" name="rating" value="4">
+                        					<span class='icon4'>★</span>
+                        				</label>
+                        				<label>
+                        					<input type="radio" name="rating" value="5">
+                        					<span class='icon5'>★</span>
+                        				</label>
+                        				                       				
+                        			</div>
+                        			
+                                 </div>
+                        	</div>    
+
+                        	<div class="form-group col-md-12" id='post'>
+
+								{% if bReview %}
+                                	<button class="btn btn-success">Post</button>
+                                {% else %}
+                                	<button class="btn btn-success" disabled>Post</button>
+                                {% endif %}
+                        		
+                        	</div>
+
+                		</div>		
+						
+					</form>
+
+				</div>
+
+				{% if reviews[0] != NONE %}
+
+				<div class='container' id='reviews'>
+					<div class='col'>
+						{% for reviewItem in reviews %}
+						<div class='row' id='eachReview'>
+							<div class='col-1'>
+								<img src="/static/images/profile.png" height='40px'>
+							</div>
+							<div class='col-2' id="userReview"><h6>{{ reviewItem.username}}</h6>
+							</div>
+							<div class='col' id="reviewData">
+								{{ reviewItem.review }}	
+							</div>
+								
+							
+						</div>
+						{% endfor %}
+					</div>
+					
+				</div>
+				{% endif %}
+				
+
+			</div>
+
+		</div>
+
+	</div>
+
+		
+
+
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+{% block title %}
+Results
+{% endblock %}
+
+
+
+{% block body %}
+
+	<header>
+			<nav class="navbar navbar-dark bg-dark">
+				<div class='col-10'>
+					{{username[0]}}
+				</div>
+				<div class="col-2">	
+					<a class="navbar-brand" href="{{ url_for('logout') }}">Log Out</a>
+				</div>
+  				
+  			</nav>
+	</header>
+
+
+	<div class = 'results'>
+		<div class = 'big-banner'>
+			<div class = 'container'>
+				
+				<div class='container' id='search_section'>
+					<h1>What book are you looking for?</h1>
+					
+					<form action="{{ url_for('results') }}" method ="post" class = 'search_form'>
+						<div class="form-row">
+                        	<div class="col-9">
+                                <input type="text" class="form-control" name = 'search' placeholder="Search...">
+                        	</div>
+
+                        	<div class="col-3">
+                                <button class="btn btn-success">Search</button>
+                        	</div>
+
+                		</div>		
+						
+					</form>
+
+				</div>
+
+				<div class='container' id='result_section'>
+					<h2>Results for "{{ search }}"</h2>
+					<ul>
+						{% for result in results %}
+							<li class='row'><a class='col-6' href="{{ url_for('book', book_id = result.book_id) }}"><h5 >{{ result.title }}</h5></a><p class='col-6'>by {{ result.author }}</p></li>
+						{% endfor %}
+
+					</ul>
+					{% if results[0] == Null %}
+						<h5>There were no matches for your search</h5>
+					{% endif %}
+
+				</div>
+				
+
+			</div>
+
+		</div>
+
+	</div>
+
+	
+	
+
+{% endblock %}

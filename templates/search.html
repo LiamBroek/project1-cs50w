@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+{% block title %}
+Search
+{% endblock %}
+
+{% block body %}
+	<header>
+			<nav class="navbar navbar-dark bg-dark">
+				<div class='col-10'>
+					{{username}}
+				</div>
+				<div class="col-2">	
+					<a class="navbar-brand" href="{{ url_for('logout') }}">Log Out</a>
+				</div>
+  				
+  			</nav>
+	</header>
+
+	<div class = 'search'>
+		<div class = 'big-banner'>
+			<div class = 'container'>
+				<div class='container'>
+					<h1>What book are you looking for?</h1>
+
+					<form action="{{ url_for('results') }}" method ="post" class = 'search_form'>
+						<div class="form-row">
+                        	<div class="col-9">
+                                <input type="text" class="form-control" name = 'search' placeholder="Search...">
+                        	</div>
+
+                        	<div class="col-3">
+                                <button class="btn btn-success">Search</button>
+                        	</div>
+
+                		</div>		
+						
+					</form>
+
+				</div>
+				
+
+			</div>
+
+		</div>
+
+	</div>
+{% endblock %}
